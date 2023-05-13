@@ -7,6 +7,7 @@ import {
   getLoginPage,
   getNewsPage,
   getServicePage,
+  getSignUpPage,
   getTrainerPage,
 } from "../controller/pageController.mjs";
 
@@ -20,5 +21,6 @@ pageRouter.route("/trainer").get(getTrainerPage);
 pageRouter.route("/gallery").get(getGalleryPage);
 pageRouter.route("/contact").get(getContactPage);
 pageRouter.route("/login").get(getLoginPage);
+pageRouter.route("/signup").get(getSignUpPage);
 
 

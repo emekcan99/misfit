@@ -10,7 +10,10 @@
   "author": "emekcan99",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "ejs": "^3.1.9",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "mongoose": "^7.1.1"
   }
 }
