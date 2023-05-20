@@ -71,18 +71,28 @@
                               <li class="nav-item <%=page_name=== 'news' && 'active' %>">
                                  <a class="nav-link" href="/news">News</a>
                               </li>
-                              <li class="nav-item <%=page_name=== 'trainer' && 'active' %>">
-                                 <a class="nav-link" href="/trainer">Trainer</a>
+                              <% if(userIn){%> 
+                              <li class="nav-item <%=page_name=== 'program' && 'active' %>">
+                                 <a class="nav-link" href="/program">Program</a>
                               </li>
+                              <%}%>
                               <li class="nav-item <%=page_name=== 'gallery' && 'active' %>">
                                  <a class="nav-link" href="/gallery">Gallery</a>
                               </li>
                               <li class="nav-item <%=page_name=== 'contact' && 'active' %>">
                                  <a class="nav-link" href="/contact">Contact</a>
                               </li>
+                              <% if(userIn){ %>
+                                 <li class="nav-item <%=page_name=== 'login' && 'active' %>">
+                                    <a class="nav-link" href="/users/logout">LogOut</a>
+                                 </li>
+                                 <% }%>
+
+                                 <% if(!userIn){ %>
                               <li class="nav-item <%=page_name=== 'login' && 'active' %>">
                                  <a class="nav-link" href="/login">LogIn</a>
                               </li>
+                              <% }%>
                            </ul>
                         </div>
                      </nav>

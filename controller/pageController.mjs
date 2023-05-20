@@ -1,3 +1,5 @@
+import { User } from "../models/User.mjs";
+
 export const getIndexPage = async (req, res) => {
   res.status(200).render("index", {
     page_name: "home",
@@ -22,9 +24,13 @@ export const getNewsPage = async (req, res) => {
   });
 };
 
-export const getTrainerPage = async (req, res) => {
-  res.status(200).render("trainer", {
-    page_name: "trainer",
+export const getProgramPage = async (req, res) => {
+  const user = await User.findById(req.session.userID)
+  console.log(user)
+  
+  res.status(200).render("program", {
+    page_name: "program",
+    user:user,
   });
 };
 export const getGalleryPage = async (req, res) => {
@@ -48,3 +54,11 @@ export const getSignUpPage = async (req, res) => {
     page_name: "login"
   });
 };
+
+export const getAddProgramPage = async (req,res) => {
+  const user = await User.findById(req.session.userID)
+  res.status(200).render("add-program",{
+    page_name:"program",
+    user: user
+  })
+}

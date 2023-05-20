@@ -15,13 +15,28 @@
          <div class="container">
             <div class="row justify-content-center">
                <div class="col-md-16 ">
-                  <form id="request" class="main_form ">
+                  
+                  <form id="request" class="main_form " method="POST" action="/users/login">
                      <div class="row">
+                        <% if (flashMessages){%>
+                           <% if (flashMessages.success){%>
+                               <div class="alert alert-success">
+                                   <%= flashMessages.success %>
+                               </div>
+   
+                               
+                               <% } else if (flashMessages.error){ %>
+   
+                               <div class="alert alert-danger">
+                                   <%= flashMessages.error %>
+                               </div>
+                               <%} %>
+                       <%}%>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="Email" type="type" name="Email"> 
+                           <input class="contactus" placeholder="email" type="type" name="email"> 
                         </div>
                         <div class="col-md-12">
-                           <input class="contactus" placeholder="password" type="password" name="Subject">                          
+                           <input class="contactus" placeholder="password" type="password" name="password">                          
                         </div>
                         <div class="col-md-12">
                            <button class="send_btn">Log In</button>

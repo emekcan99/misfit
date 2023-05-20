@@ -1,0 +1,42 @@
+<%-include("partials/_header");%>
+        <div class="back_re">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="title">
+                   <h2>user role : <%=user.role%></h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- trainers -->
+      <div  class="trainers">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <p>Lorem Ipsum available, but the majority have suffered </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <% if (user.role === "admin" || user.role === "coach"){ %> 
+               <div class="col-md-4">
+                  <a class="btn" href="/add-program">
+                  <div id="trai" class="trainer_box">
+                     <div class="trainer_img">
+                        <figure><img src="images/+.jpg" alt="#"/></figure>
+                     </div>
+                     <div class="trainer">
+                        <h3>add a new program</h3>
+                     </div>
+                  </div>
+               </a>
+               </div>
+               <%}%>
+            </div>
+         </div>
+      </div>
+      <!-- end trainers -->
+      <%-include("partials/_footer");%>
